@@ -1,6 +1,6 @@
 
 
-// Kaden's Algorithm is most important algorithm for INTERVIEW purpose.
+// Kaden's Algorithm is MOST IMPORTANT algorithm for INTERVIEW purpose.
 
 
 public class MaxSubArraySum_KadensAlgo {

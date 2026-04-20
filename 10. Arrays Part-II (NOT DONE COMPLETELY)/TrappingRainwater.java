@@ -59,3 +59,5 @@ public class TrappingRainwater {
         System.out.println(TrappedRainWater(height));
     }
 }
+
+// Use this video for understanding : https://youtu.be/UZG3-vZlFM4?si=80Vg_TZdV7fCRM7d
