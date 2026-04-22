@@ -18,7 +18,7 @@ public class BinarySearch {
                 start = mid - 1 ;
             }
         }
-        return - 1;         // if the key is not founded in the array
+        return - 1;         // if the key is not found in the array
     }
 
 
