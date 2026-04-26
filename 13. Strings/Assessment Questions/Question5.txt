@@ -1,0 +1,65 @@
+
+                    intern() method in Java String:
+---------------------------------------------------------------------------------
+It returns a reference from the String Pool.
+If the string already exists in the pool → returns that reference.
+If not → adds it to the pool and returns the reference.
+
+Why use it?
+ - Saves memory by reusing string objects
+ - Helps in comparing strings using '==' after interning
+
+Example:
+String s1 = new String("hello"); // new object (heap)
+String s2 = "hello";             // stored in pool
+
+String s3 = s1.intern();         // now refers to pool
+
+System.out.println(s2 == s3); // true
+
+
+
+
+
+
+
+
+                                StringBuffer()
+----------------------------------------------------------------------------------
+
+// ===============================
+// StringBuffer (Java Notes)
+// ===============================
+//
+// 1. Definition:
+// StringBuffer is a mutable (changeable) string in Java.
+// It allows modification without creating a new object.
+//
+// 2. Key Points:
+// - Mutable → can change the same object
+// - Thread-safe → safe in multi-threading (synchronized)
+// - Slower than StringBuilder (because of safety)
+//
+// 3. Difference:
+// String        → immutable (cannot change)
+// StringBuffer  → mutable + thread-safe
+// StringBuilder → mutable + faster (not thread-safe)
+//
+// 4. Example:
+StringBuffer sb = new StringBuffer("Hello");
+
+sb.append(" World");    // Hello World
+sb.insert(5, " Java");  // Hello Java World
+sb.replace(0, 5, "Hi"); // Hi Java World
+sb.delete(0, 2);        //  Java World
+sb.reverse();           // dlroW avaJ 
+
+System.out.println(sb);
+//
+// 5. Important:
+// String creates new object on change ❌
+// StringBuffer modifies same object ✅
+//
+// 6. One-line:
+// StringBuffer = editable + thread-safe string
+// ===============================
