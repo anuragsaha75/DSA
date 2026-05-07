@@ -16,7 +16,7 @@ class BankAccount {
 
     // Setter → used to set value
     public void setPassword(String p) {
-        password = p;
+        this.password = p;
     }
 
     // Getter → used to get value

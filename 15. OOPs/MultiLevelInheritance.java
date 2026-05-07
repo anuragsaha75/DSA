@@ -22,5 +22,6 @@ class Mammal extends Animal{
 }
 
 class Dogs extends Mammal{
+    
     String breed;
 }
