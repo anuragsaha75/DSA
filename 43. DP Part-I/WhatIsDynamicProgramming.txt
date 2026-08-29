@@ -1,0 +1,267 @@
+
+Qs. What is Dynamic 
+
+Dynamic Programming is a technique in computer programming that helps to efficiently
+and optimal substructure solve a class of problems that have property.
+
+
+
+
+
+// ===============================================================
+//             DYNAMIC PROGRAMMING - MEMOIZATION (TOP-DOWN)
+// ===============================================================
+
+/*
+    What is Memoization?
+
+    -> Memoization is a Top-Down DP approach.
+
+    -> We first solve the problem using recursion.
+
+    -> Whenever we calculate an answer for a subproblem,
+       we store it inside a DP array.
+
+    -> If the same subproblem appears again,
+       we simply return the stored answer.
+
+    -> This avoids repeated calculations.
+
+    Flow:
+
+    Problem
+       ↓
+    Recursive Calls
+       ↓
+    Store Answer
+       ↓
+    Reuse Stored Answer
+*/
+
+
+public static int fib(int n, int dp[]){
+
+    // -----------------------------------------------------------
+    // STEP 1 : Base Case
+    // -----------------------------------------------------------
+
+    /*
+        Base cases are answers that are already known.
+
+        Fibonacci
+
+        fib(0) = 0
+        fib(1) = 1
+    */
+
+    if(n==0 || n==1){
+        return n;
+    }
+
+
+
+    // -----------------------------------------------------------
+    // STEP 2 : Check if Answer is Already Calculated
+    // -----------------------------------------------------------
+
+    /*
+        dp[i] stores Fibonacci(i)
+
+        If dp[n] is NOT 0,
+        it means we have already calculated fib(n).
+
+        No need to calculate again.
+
+        Simply return the stored answer.
+    */
+
+    if(dp[n]!=0){
+        return dp[n];
+    }
+
+
+
+    // -----------------------------------------------------------
+    // STEP 3 : Calculate Current Answer
+    // -----------------------------------------------------------
+
+    /*
+        Transition Formula
+
+        fib(n)
+
+        =
+
+        fib(n-1) + fib(n-2)
+    */
+
+    dp[n] = fib(n-1,dp) + fib(n-2,dp);
+
+
+
+    // -----------------------------------------------------------
+    // STEP 4 : Return Stored Answer
+    // -----------------------------------------------------------
+
+    /*
+        After calculating
+
+        Store the answer.
+
+        Return it.
+    */
+
+    return dp[n];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ===============================================================
+//              DYNAMIC PROGRAMMING - TABULATION (BOTTOM-UP)
+// ===============================================================
+
+/*
+    What is Tabulation?
+
+    -> Tabulation is a Bottom-Up DP approach.
+    -> We solve the smallest subproblems first.
+    -> Store every answer in a DP array/table.
+    -> Use previous answers to calculate bigger answers.
+    -> There is NO recursion.
+
+    Flow:
+
+    Base Cases
+         ↓
+    Fill DP Table
+         ↓
+    Return Final Answer
+*/
+
+
+public static int solve(int n){
+
+    // -----------------------------------------------------------
+    // STEP 1 : Handle Edge Cases (if required)
+    // -----------------------------------------------------------
+
+    // Example:
+    // if(n == 0)
+    //     return 0;
+
+
+
+    // -----------------------------------------------------------
+    // STEP 2 : Create DP Array
+    // -----------------------------------------------------------
+
+    // dp[i] represents the answer for state i.
+
+    // Why n+1 ?
+
+    // Because indexes go from
+    //
+    // 0 1 2 3 ... n
+    //
+    // Total positions = n+1
+
+    int dp[] = new int[n+1];
+
+
+
+    // -----------------------------------------------------------
+    // STEP 3 : Initialize Base Cases
+    // -----------------------------------------------------------
+
+    // Base cases are answers that are already known.
+
+    // Fibonacci
+
+    dp[0] = 0;
+    dp[1] = 1;
+
+    /*
+        Never calculate base cases inside the loop.
+
+        We already know
+
+        fib(0) = 0
+        fib(1) = 1
+
+        Therefore initialize them directly.
+    */
+
+
+
+    // -----------------------------------------------------------
+    // STEP 4 : Fill DP Table
+    // -----------------------------------------------------------
+
+    /*
+        Why does loop start from 2 ?
+
+        dp[0] and dp[1] are already known.
+
+        First unknown state is dp[2].
+
+        Therefore
+
+        i = 2
+
+        NOT
+
+        i = 0
+
+        NOT
+
+        i = 1
+    */
+
+    for(int i=2;i<=n;i++){
+
+        /*
+            Transition Formula
+
+            Current state depends on previous states.
+
+            Fibonacci
+
+            fib(i) = fib(i-1) + fib(i-2)
+
+            Therefore
+
+            dp[i] = dp[i-1] + dp[i-2]
+        */
+
+        dp[i] = dp[i-1] + dp[i-2];
+    }
+
+
+
+    // -----------------------------------------------------------
+    // STEP 5 : Return Final Answer
+    // -----------------------------------------------------------
+
+    /*
+        We wanted Fibonacci(n)
+
+        dp[n] stores Fibonacci(n)
+
+        Therefore
+
+        return dp[n];
+    */
+
+    return dp[n];
+}
