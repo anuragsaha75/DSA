@@ -19,7 +19,7 @@ public class ZeroOneKnapsackTabulation {
 
                 if(weight<=j){ // VALID Condition
                     int includeProfit = value + dp[i-1][j-weight];
-                    int excludeProfit = dp[i-1][W];
+                    int excludeProfit = dp[i-1][j];
                     dp[i][j] = Math.max(includeProfit, excludeProfit);
 
                 } else{ // INAVLID Condition
