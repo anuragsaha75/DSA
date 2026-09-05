@@ -30,9 +30,26 @@ public class ZeroOneKnapsackTabulation {
             }
         }
 
+        print(dp);
+
         return dp[n][W]; // dp[n][W] means the last cell of the 2D array
     }
 
+
+
+
+
+
+    // This Function is just to print the dp[][] to visualise. No direct connection with this problem
+    public static void print(int dp[][]){
+
+        for( int i=0; i<dp.length; i++) {
+            for(int j=0; j<dp[0].length; j++) {
+                System.out.print(dp[i][j]+" ") ;
+            }
+        System.out.println();
+        }
+    }
 
     public static void main(String[] args) {
         int val[] = {15, 14, 10, 45, 30};
@@ -40,5 +57,6 @@ public class ZeroOneKnapsackTabulation {
         int W = 7;
 
         System.out.println(ZOknapsackTabulation(val, wt, W));
+        
     }
 }
