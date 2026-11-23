@@ -10,7 +10,7 @@ public class MultiLevelInheritance {
 class Animal{
     String colour;
     void eats(){
-        System.err.println("Eats");
+        System.out.println("Eats");
     }
     void breadth(){
         System.out.println("Breadths");

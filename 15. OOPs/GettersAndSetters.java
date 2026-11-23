@@ -45,6 +45,9 @@ class Pen {
         GetColour() → returns colour
         SetColour() → sets colour
 
+ You can’t use this directly inside a static method such as main,
+ because this refers to a particular object and a static method doesn’t run on one particular object.
+
 --------------------------------------------------
 
 2. 🔹 Why we use Getter & Setter?

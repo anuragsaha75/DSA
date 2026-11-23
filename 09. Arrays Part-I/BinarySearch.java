@@ -5,17 +5,19 @@ public class BinarySearch {
 
         int start = 0;
         int end = arr.length-1;
-        int mid = (start + end)/2 ;
+        
 
         while(start<=end)
         {
-            if (mid==key){
+            int mid = (start + end)/2 ;
+            
+            if (arr[mid]==key){
                 return mid;
             }
-            else if (mid < key) {     // Right Side Case
+            else if (arr[mid] < key) {     // Right Side Case
                 start = mid + 1 ;
-            } else if (mid > key) {     // Left Side Case
-                start = mid - 1 ;
+            } else if (arr[mid] > key) {     // Left Side Case
+                end = mid - 1 ;
             }
         }
         return - 1;         // if the key is not found in the array
@@ -32,3 +34,7 @@ public class BinarySearch {
     }
     
 }
+
+
+
+

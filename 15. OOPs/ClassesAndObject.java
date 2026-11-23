@@ -3,7 +3,7 @@ public class ClassesAndObject {
         Pen p1 = new Pen(); // created object of Pen named p1
 
         p1.SetColour("Red");
-        p1.SetThinkness(6);
+        p1.SetThikness(6);
 
         System.out.println(p1.colour);
         System.out.println(p1.thickness);
@@ -18,7 +18,7 @@ class Pen {
         colour = new_colour;
     }
 
-    void SetThinkness(int new_thickness) {
+    void SetThikness(int new_thickness) {
         thickness = new_thickness;
     }
 }

@@ -1,3 +1,4 @@
+
 public class ArraySort {
     
 
@@ -14,6 +15,7 @@ public class ArraySort {
         }
         for(int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
+
         }
     }
 
@@ -21,6 +23,12 @@ public class ArraySort {
             int arr[]={9,5,3,6,0,1};
             
             Sort(arr);
+
+        //    <------------- Another In-Built Method------->
+
+
+            // Arrays.sort(arr);
+            // System.out.println(Arrays.toString(arr));
         }
     }
 

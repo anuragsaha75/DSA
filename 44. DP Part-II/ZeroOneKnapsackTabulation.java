@@ -23,9 +23,9 @@ public class ZeroOneKnapsackTabulation {
                     dp[i][j] = Math.max(includeProfit, excludeProfit);
 
                 } else{ // INAVLID Condition
-                    int excludeProfit = dp[i-1][W];
+                     
 
-                    dp[i][j] = excludeProfit;
+                    dp[i][j] = dp[i-1][j];
                 }
             }
         }

@@ -12,7 +12,6 @@ public class Constructor {
 class Student {
     String name;
     int roll;
-
     // 🔹 Default Constructor
     Student() { // Constructor Has No Return Type
         System.out.println("Default constructor is called...");
